@@ -1,11 +1,11 @@
 import Header from "../Header";
 import Footer from "../Footer";
 
-export default function FullWidth({ children }) {
+export default function FullWidthLayout({ children }) {
   return (
     <div className="container full-width">
       <Header />
-      {children}
+      <article>{children}</article>
       <Footer />
     </div>
   );

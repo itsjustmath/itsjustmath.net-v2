@@ -8,7 +8,8 @@ import Link from 'next/link'
 import path from 'path'
 import CustomLink from '../../components/CustomLink'
 import Layout from '../../components/Layout'
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
+import DefaultLayout from "../../components/layouts/DefaultLayout";
+import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -19,26 +20,19 @@ const components = {
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
-  TestComponent: dynamic(() => import('../../components/TestComponent')),
+  TestComponent: dynamic(() => import("../../components/TestComponent")),
   Head,
-}
+};
 
 export default function PostPage({ source, frontMatter }) {
   return (
-    <Layout>
-      <header>
-        <nav>
-          <Link href="/">
-            <a>👈 Go back home</a>
-          </Link>
-        </nav>
-      </header>
-      <div className="post-header">
+    <>
+      <>
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
           <p className="description">{frontMatter.description}</p>
         )}
-      </div>
+      </>
       <main>
         <MDXRemote {...source} components={components} />
       </main>
@@ -55,9 +49,17 @@ export default function PostPage({ source, frontMatter }) {
           opacity: 0.6;
         }
       `}</style>
-    </Layout>
-  )
+    </>
+  );
 }
+
+PostPage.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      <DefaultLayout>{page}</DefaultLayout>
+    </Layout>
+  );
+};
 
 export const getStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
