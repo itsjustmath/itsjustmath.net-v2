@@ -16,12 +16,17 @@ import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-  a: CustomLink,
+  // a: CustomLink,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import("../../components/TestComponent")),
   Head,
+  FullWidth: dynamic(() => import("../../components/FullWidth")),
+  MainColumn: dynamic(() => import("../../components/MainColumn")),
+  MarginFigure: dynamic(() => import("../../components/MarginFigure")),
+  MarginNote: dynamic(() => import("../../components/MarginNote")),
+  SideNote: dynamic(() => import("../../components/SideNote")),
 };
 
 export default function PostPage({ source, frontMatter }) {

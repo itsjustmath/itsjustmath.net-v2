@@ -10,22 +10,23 @@ import { handleize } from "../utils";
  * @param {string} image - path to image
  * @param {number} height
  * @param {number} width
- * @param {string} [caption]
+ * @param {JSX} [children] - for passing a caption into the component (accepts MD)
  * @example
  * <MarginFigure
-      id='Arbitrary ID'
-      image='path/to/image'
-      height={300}
-      width={300}
-      caption='This is the (optional) caption'
-    />
+ *    id='Arbitrary ID'
+ *    image='path/to/image'
+ *    height={300}
+ *    width={300}
+ * >
+ *  Markdown formatted caption
+ * </MarginFigure>
  */
 
-export default function MarginFigure({ id, image, height, width, caption }) {
+export default function MarginFigure({ id, image, height, width, children }) {
   return (
-    // <p> necessary for staying within tufte-css layout
-    <p>
-      <label for={handleize(id)} class="margin-toggle">
+    // `.paragraph` necessary for staying within tufte-css layout
+    <div className="paragraph">
+      <label htmlFor={handleize(id)} className="margin-toggle">
         &#8853;
       </label>
       <input type="checkbox" id={handleize(id)} className="margin-toggle" />
@@ -38,8 +39,8 @@ export default function MarginFigure({ id, image, height, width, caption }) {
           width={width}
         />
         <br />
-        {caption}
+        {children}
       </span>
-    </p>
+    </div>
   );
 }
