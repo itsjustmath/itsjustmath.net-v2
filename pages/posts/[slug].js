@@ -34,26 +34,13 @@ export default function PostPage({ source, frontMatter }) {
     <>
       <>
         <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
+        {frontMatter.subtitle && (
+          <p className="subtitle">{frontMatter.subtitle}</p>
         )}
       </>
       <main>
         <MDXRemote {...source} components={components} />
       </main>
-
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-      `}</style>
     </>
   );
 }
