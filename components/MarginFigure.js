@@ -24,8 +24,9 @@ import { handleize } from "../utils";
 
 export default function MarginFigure({ id, image, height, width, children }) {
   return (
-    // `.paragraph` necessary for staying within tufte-css layout
-    <div className="paragraph">
+    // Using <span> instead of <p> because react doesn't allow nesting of <divs>
+    //  or <p> tags, `.paragraph` necessary for staying within tufte-css layout
+    <>
       <label htmlFor={handleize(id)} className="margin-toggle">
         &#8853;
       </label>
@@ -41,6 +42,6 @@ export default function MarginFigure({ id, image, height, width, children }) {
         <br />
         {children}
       </span>
-    </div>
+    </>
   );
 }
