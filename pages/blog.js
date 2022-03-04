@@ -21,25 +21,33 @@ export default function BlogPage({ posts }) {
       {posts.length ? (
         <>
           <p className="margin-maker" />
-          {posts.map((post) => (
-            <div key={post.filePath}>
-              <h2>{post.data.title}</h2>
+          {posts
+            .sort(
+              // sort posts by published date
+              (a, b) =>
+                // next.js can't serialize dates, so we have to parse a date string
+                Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate)
+            )
+            .map((post) => (
+              <div key={post.filePath}>
+                <h2>{post.data.title}</h2>
 
-              {post.data.description && (
-                <div>
-                  <p>{post.data.description}</p>
-                </div>
-              )}
-              <p>
-                <Link
-                  as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
-                  href={`/posts/[slug]`}
-                >
-                  Read More
-                </Link>
-              </p>
-            </div>
-          ))}
+                {post.data.description && (
+                  <div>
+                    <p>{post.data.description}</p>
+                  </div>
+                )}
+                <p>
+                  <Link
+                    as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
+                    href={`/posts/[slug]`}
+                  >
+                    Read More
+                  </Link>
+                </p>
+              </div>
+            ))
+            .sort((a, b) => b - a)}
         </>
       ) : (
         <h2>Coming Soon</h2>
