@@ -22,10 +22,15 @@ import { handleize } from "../utils";
  * </MarginFigure>
  */
 
-export default function MarginFigure({ id, image, height, width, children }) {
-  return (
-    // Using <span> instead of <p> because react doesn't allow nesting of <divs>
-    //  or <p> tags, `.paragraph` necessary for staying within tufte-css layout
+export default function MarginFigure({
+  id,
+  image,
+  height,
+  width,
+  wrapInDiv,
+  children,
+}) {
+  const mfMarkup = (
     <>
       <label htmlFor={handleize(id)} className="margin-toggle">
         &#8853;
@@ -42,6 +47,17 @@ export default function MarginFigure({ id, image, height, width, children }) {
         <br />
         {children}
       </span>
+    </>
+  );
+  return (
+    // Using <span> instead of <p> because react doesn't allow nesting of <divs>
+    //  or <p> tags, `.paragraph` necessary for staying within tufte-css layout
+    <>
+      {wrapInDiv ? (
+        <div className="paragraph">{mfMarkup}</div>
+      ) : (
+        <>{mfMarkup}</>
+      )}
     </>
   );
 }
