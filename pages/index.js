@@ -19,7 +19,6 @@ export default function IndexPage({ posts }) {
           image="/images/tie-dye-justin.jpg"
           height={300}
           width={300}
-          wrapInDiv={true}
         />
         {/* TODO: pass this in as MDX? */}
         {/* Intro Blurb */}
