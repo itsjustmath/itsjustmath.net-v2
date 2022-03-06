@@ -1,13 +1,12 @@
-import fs from 'fs'
+import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import Head from "next/head";
-import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
+import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
 import MarginFigure from "../components/MarginFigure";
-import profilePic from "../public/images/tie-dye-justin.jpg";
-export default function IndexPage({ posts }) {
+export default function IndexPage({ sortedEssays: essays }) {
   return (
     <>
       <Head>
@@ -49,21 +48,9 @@ export default function IndexPage({ posts }) {
           there we’ll be able to develop new thoughts and new solutions to the
           most pressing issues we face today.
         </p>
-      </>
 
-      {/* {posts.length && <h2>Recent Posts</h2>}
-      <ul>
-        {posts.map((post) => (
-          <li key={post.filePath}>
-            <Link
-              as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
-              href={`/posts/[slug]`}
-            >
-              <a>{post.data.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul> */}
+        {/* TODO: read my latest essay */}
+      </>
     </>
   );
 }
@@ -77,16 +64,22 @@ IndexPage.getLayout = function getLayout(page) {
 };
 
 export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-    const { content, data } = matter(source)
+  const essays = essayFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+    const { content, data } = matter(source);
+    const slug = filePath.replace(/\.mdx$/, "");
 
     return {
       content,
       data,
+      slug,
       filePath,
-    }
-  })
+    };
+  });
 
-  return { props: { posts } }
+  const sortedEssays = essays.sort((a, b) => {
+    return Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate);
+  });
+
+  return { props: { sortedEssays } };
 }

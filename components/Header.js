@@ -13,7 +13,7 @@ export default function Header(props) {
       {/* TODO: active state */}
       <nav className="group">
         <Link href="/">Start Here</Link>
-        <Link href="/blog">Blog</Link>
+        <Link href="/essays">Essays</Link>
         <Link href="/newsletter">Newsletter</Link>
       </nav>
     </header>
