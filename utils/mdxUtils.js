@@ -11,15 +11,15 @@ const essayFilePaths = fs
   .filter((path) => /\.mdx?$/.test(path));
 
 // NOTES
-const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
+// const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
 
-const notesFilePaths = fs
-  .readdirSync(NOTES_PATH)
-  .filter((path) => /\.mdx?$/.test(path));
+// const notesFilePaths = fs
+//   .readdirSync(NOTES_PATH)
+//   .filter((path) => /\.mdx?$/.test(path));
 
 module.exports = {
   essayFilePaths,
-  notesFilePaths,
+  // notesFilePaths,
   ESSAYS_PATH,
-  NOTES_PATH,
+  // NOTES_PATH,
 };
