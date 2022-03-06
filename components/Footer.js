@@ -10,14 +10,14 @@ export default function Footer(props) {
           action="https://buttondown.email/api/emails/embed-subscribe/itsjustmath"
           method="post"
           target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/itsjustmath', 'popupwindow')"
-          class="embeddable-buttondown-form"
+          onSubmit="window.open('https://buttondown.email/itsjustmath', 'popupwindow')"
+          className="embeddable-buttondown-form"
           style={{
             display: "inline-block",
             marginLeft: "10px",
           }}
         >
-          <label for="bd-email">
+          <label htmlFor="bd-email">
             <strong>Newsletter Sign-up: </strong>
           </label>
           <input type="email" name="email" id="bd-email" placeholder="Email" />
