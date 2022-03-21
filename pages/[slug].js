@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
+import { config } from "../config";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
@@ -30,6 +31,11 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   return (
     <>
+      <Head>
+        <title>
+          {frontMatter.title} | {config.title}
+        </title>
+      </Head>
       <>
         <h1>{frontMatter.title}</h1>
         {frontMatter.subtitle && (

@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import path from "path";
 import Head from "next/head";
 import Link from "next/link";
+import { config } from "../config";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
@@ -11,11 +12,13 @@ import DefaultLayout from "../components/layouts/DefaultLayout";
 const pageName = "Essays";
 
 export default function EssaysPage({ sortedEssays }) {
-  console.log(sortedEssays);
+  // console.log(sortedEssays);
   return (
     <Fragment>
       <Head>
-        <title>{pageName}</title>
+        <title>
+          {pageName} | {config.title}
+        </title>
       </Head>
       <h1>{pageName}</h1>
 

@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import Head from "next/head";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
+import { config } from "../config";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
 import MarginFigure from "../components/MarginFigure";
@@ -10,7 +11,7 @@ export default function IndexPage({ sortedEssays: essays }) {
   return (
     <>
       <Head>
-        <title>Start Here</title>
+        <title key="title">Start Here | {config.title}</title>
       </Head>
       <>
         <MarginFigure
