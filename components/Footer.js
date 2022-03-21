@@ -10,7 +10,10 @@ export default function Footer(props) {
           action="https://buttondown.email/api/emails/embed-subscribe/itsjustmath"
           method="post"
           target="popupwindow"
-          onSubmit="window.open('https://buttondown.email/itsjustmath', 'popupwindow')"
+          // onSubmit={windowObj.open(
+          //   "https://buttondown.email/itsjustmath",
+          //   "popupwindow"
+          // )}
           className="embeddable-buttondown-form"
           style={{
             display: "inline-block",
