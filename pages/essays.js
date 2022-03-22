@@ -27,7 +27,11 @@ export default function EssaysPage({ sortedEssays }) {
           <p className="margin-maker" />
           {sortedEssays.map((essay) => (
             <div key={essay.filePath}>
-              <h2>{essay.data.title}</h2>
+              <h2>
+                <Link as={`/${essay.slug}`} href={`/${essay.slug}`}>
+                  {essay.data.title}
+                </Link>
+              </h2>
 
               {essay.data.description && (
                 <div>
