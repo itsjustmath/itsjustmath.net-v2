@@ -12,7 +12,6 @@ import DefaultLayout from "../components/layouts/DefaultLayout";
 const pageName = "Essays";
 
 export default function EssaysPage({ sortedEssays }) {
-  // console.log(sortedEssays);
   return (
     <Fragment>
       <Head>
