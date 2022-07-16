@@ -1,0 +1,275 @@
+.portfolio-layout {
+  // height: 100%;
+  transition: background-color 1s ease;
+
+  // &,
+  // .container {
+  //   height: 100%;
+  // }
+}
+
+.portfolio {}
+
+$scroll-line-height: 70px;
+
+.scroll-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  position: relative;
+  text-transform: uppercase;
+  font-size: .875em;
+  padding-bottom: $scroll-line-height + 10;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: $scroll-line-height;
+    width: 1px;
+    background-color: #111;
+    transform: translateY(0);
+    transition: transform 1.2s;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateY(10px);
+      transition: transform 0.6s;
+    }
+  }
+}
+
+.panel {}
+
+.panel--portfolio {
+  // min-height: 60vh;
+  padding: 120px 0;
+  position: relative;
+  font-family: 'Libre Franklin', sans-serif;
+  overflow: hidden;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-style: normal;
+    margin-top: unset;
+  }
+
+  &.left {
+    .media {
+      .image {
+        @media (min-width: 768px) {
+          right: unset;
+        }
+
+        &:before {
+          right: unset;
+          left: -10px;
+        }
+      }
+    }
+  }
+
+  &.right {
+    .inner {
+      @media (min-width: 768px) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .media {
+      .image {
+        @media (min-width: 768px) {
+          left: unset;
+        }
+
+        &:before {
+          left: unset;
+          right: -10px;
+        }
+      }
+    }
+  }
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-around;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .copy,
+  .media {
+    @media (min-width: 768px) {
+      flex-basis: 40%;
+      max-width: 40%;
+    }
+  }
+
+  .copy {
+    margin-bottom: 20px;
+
+    a {
+      position: relative;
+
+      &:after {
+        content: '';
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: all 0.3;
+      }
+
+      &:hover {
+        &::after {
+          content: '⇗';
+          position: absolute;
+          right: -25px;
+          top: 0;
+          opacity: 1;
+          transform: scale(1);
+          transition: all 0.3s;
+        }
+      }
+
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: unset;
+    }
+  }
+
+  .media {
+    position: relative;
+    display: block;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      pointer-events: none;
+
+      @media (min-width: 768px) {
+        min-height: 300px;
+        height: 50vh;
+        padding-bottom: unset;
+      }
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        top: 10px;
+        bottom: unset;
+      }
+    }
+
+    picture {
+      z-index: 1;
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      @media (min-width: 768px) {
+        width: 48vw;
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top left;
+      box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 20%);
+      border-radius: 3px;
+      height: 100%;
+      z-index: 1;
+      display: block;
+      transform: scale(1);
+      transition: all 0.6s;
+
+      &:hover {
+        box-shadow: 4px 4px 24px 0 rgb(0 0 0 / 25%);
+        transform: scale(1.01);
+        transition: all 0.6s;
+      }
+    }
+  }
+}
+
+
+//
+// COLORS
+// -------------------
+
+.color-white {
+  background-color: #fffff8;
+}
+
+.color-blue {
+  background-color: #e6ebf2;
+}
+
+.color-teal {
+  background-color: #e6eff2;
+}
+
+.color-tan {
+  background-color: #f2ede6;
+}
+
+.color-gray {
+  background-color: #f2f2f2;
+}
+
+.color-yellow {
+  background-color: #fcfcf0;
+}
+
+.color-beige {
+  background-color: #F19031;
+}
+
+.color-red {
+  background-color: #f2e8e6;
+}
+
+.color-orange {
+  background-color: #fbf6f2;
+}
+
+// Same as color-blue?
+.color-aqua {
+  background-color: #e6f0f2;
+}
+
+.color-navy {
+  background-color: #e6eaf2;
+}

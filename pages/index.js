@@ -5,8 +5,10 @@ import Head from "next/head";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
 import { config } from "../config";
 import Layout from "../components/Layout";
-import DefaultLayout from "../components/layouts/DefaultLayout";
+import PortfolioLayout from "../components/layouts/PortfolioLayout";
 import MarginFigure from "../components/MarginFigure";
+import SideNote from "../components/SideNote";
+
 export default function IndexPage({ sortedEssays: essays }) {
   return (
     <>
@@ -29,25 +31,21 @@ export default function IndexPage({ sortedEssays: essays }) {
           sipping coffee, or laughing at my own terrible puns.
         </p>
         <p>
-          I currently work at a digital agency called{" "}
-          <strong>
-            <em>The Stable</em>
-          </strong>{" "}
-          — where I’ve helped build sites such as{" "}
-          <a href="https://store.stamps.com/">Stamps.com</a>,{" "}
-          <a href="https://nhsfunfactory.com/">NHS Fun Factory</a>,{" "}
-          <a href="https://www.fijiwater.com">FIJI Water</a>,{" "}
-          <a href="https://www.samuseum.org/">San Antonio Museum of Art</a>,{" "}
-          <a href="https://www.trustthebum.com/">Sun Bum</a>, and{" "}
-          <a href="https://www.zehnergroup.com/work">more</a>. Previously I
-          worked on the apartment rental platform,{" "}
-          <a href="https://en.wikipedia.org/wiki/RadPad">Radpad</a>.
+          I lead builds
+          <SideNote id="portfolio">
+            Keep scrolling to preview some of the sites I’ve help build
+          </SideNote>{" "}
+          at a digital agency called <em>The Stable</em>
+          <SideNote id="acquisition">Recently acquired by Accenture</SideNote>.
+          Prior to my current position, I worked on the apartment rental
+          platform, Radpad.
         </p>
         <p>
-          I’m interested in how we can use technology to upgrade our tools and
-          techniques, and help us understand the complexity of the world. From
-          there we’ll be able to develop new thoughts and new solutions to the
-          most pressing issues we face today.
+          I’m interested in exploring how to use technology to: improve people’s
+          lives, provide a new engaging medium for teaching and storytelling,
+          and to make interpersonal communication and collaboration more
+          effective (so we can devote time and energy to what's most important
+          to us).
         </p>
 
         {/* TODO: read my latest essay */}
@@ -59,7 +57,7 @@ export default function IndexPage({ sortedEssays: essays }) {
 IndexPage.getLayout = function getLayout(page) {
   return (
     <Layout>
-      <DefaultLayout>{page}</DefaultLayout>
+      <PortfolioLayout>{page}</PortfolioLayout>
     </Layout>
   );
 };
