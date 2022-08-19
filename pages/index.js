@@ -32,7 +32,7 @@ export default function IndexPage({ sortedEssays: essays }) {
           I currently work at a digital agency called{" "}
           <strong>
             <em>The Stable</em>
-          </strong>{" "}
+          </strong>{" "} (acquired by Accenture)
           — where I’ve helped build sites such as{" "}
           <a href="https://store.stamps.com/">Stamps.com</a>,{" "}
           <a href="https://nhsfunfactory.com/">NHS Fun Factory</a>,{" "}
