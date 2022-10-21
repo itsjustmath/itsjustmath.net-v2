@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useMemo } from "react";
 
-import { portfolioData } from "../../data/PortfolioData";
+import { portfolioData } from "../../data/portfolioData";
 import Header from "../Header";
 import Footer from "../Footer";
 import PortfolioPanel from "../portfolio/PortfolioPanel";
