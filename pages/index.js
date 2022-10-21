@@ -35,17 +35,29 @@ export default function IndexPage({ sortedEssays: essays }) {
           <SideNote id="portfolio">
             Keep scrolling to preview some of the sites I’ve help build
           </SideNote>{" "}
-          at a digital agency called <em>The Stable</em>
-          <SideNote id="acquisition">Recently acquired by Accenture</SideNote>.
-          Prior to my current position, I worked on the apartment rental
+          at an agency of called{" "}
+          <em>
+            <a
+              href="https://www.accenture.com/ch-en/about/accenture-song-index"
+              title="Accenture Song"
+              target="_blank"
+            >
+              Accenture Song
+            </a>
+          </em>
+          <SideNote id="acquisition">
+            The interactive digital wing of Accenture
+          </SideNote>
+          . Prior to my current position, I worked on the apartment rental
           platform, Radpad.
         </p>
         <p>
+          {/* Add note about "growth"? Pull from 12 fav problems */}
           I’m interested in exploring how to use technology to: improve people’s
-          lives, provide a new engaging medium for teaching and storytelling,
-          and to make interpersonal communication and collaboration more
-          effective (so we can devote time and energy to what's most important
-          to us).
+          lives, provide a new engaging medium for learning{" "}
+          <s>teaching and storytelling</s>, and to make interpersonal
+          communication and collaboration more effective (so we can devote time
+          and energy to what's most important to us).
         </p>
 
         {/* TODO: read my latest essay */}
