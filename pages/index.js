@@ -7,6 +7,7 @@ import { config } from "../config";
 import Layout from "../components/Layout";
 import PortfolioLayout from "../components/layouts/PortfolioLayout";
 import MarginFigure from "../components/MarginFigure";
+import SideNote from "../components/SideNote";
 export default function IndexPage({ sortedEssays: essays }) {
   return (
     <>
@@ -25,11 +26,11 @@ export default function IndexPage({ sortedEssays: essays }) {
         <h1>Hi, I’m Justin!</h1>
         <p>
           I’m a New York-born and Los Angeles-raised front-end developer / UI
-          engineer. When I’m not working, you can find me hiking, biking, reading,
-          sipping coffee, or laughing at my own terrible puns.
+          engineer. When I’m not working, you can find me hiking, biking,
+          reading, sipping coffee, or laughing at my own terrible puns.
         </p>
         <p>
-          I currently work at a consulting agency called {" "}
+          I lead builds at a consulting agency of called{" "}
           <em>
             <a
               href="https://www.accenture.com/ch-en/about/accenture-song-index"
@@ -39,24 +40,28 @@ export default function IndexPage({ sortedEssays: essays }) {
               Accenture Song
             </a>
           </em>
-          — where I’ve helped build sites such as{" "}
-          <a href="https://store.stamps.com/">Stamps.com</a>,{" "}
-          <a href="https://nhsfunfactory.com/">NHS Fun Factory</a>,{" "}
-          <a href="https://www.fijiwater.com">FIJI Water</a>,{" "}
-          <a href="https://www.samuseum.org/">San Antonio Museum of Art</a>,{" "}
-          <a href="https://www.trustthebum.com/">Sun Bum</a>, and{" "}
-          <a href="https://www.zehnergroup.com/work">more</a>. Previously I
-          worked on the apartment rental platform,{" "}
+          . Prior to that I worked on the apartment rental platform,{" "}
           <a href="https://en.wikipedia.org/wiki/RadPad">Radpad</a>.
+          <SideNote id="portfolio">
+            Keep scrolling to preview some of the sites I’ve help build
+          </SideNote>{" "}
         </p>
         <p>
-          I’m interested in exploring how to use technology to improve people's lives, provide a new engaging medium for learning and storytelling, and to make interpersonal communication and collaboration more effective (so we can devote time
-          and energy to what's most important to us).
+          I’m interested in exploring how to use technology to improve people's
+          lives, provide a new engaging medium for learning and storytelling,
+          and to make interpersonal communication and collaboration more
+          effective (so we can devote time and energy to what's most important
+          to us).
         </p>
 
         <h3>Read My Latest Essay:</h3>
         <p>
-          <a href="https://writeofpassage.school/2022/08/26/how-to-make-friends-on-the-internet/" target="_blank">How to Make Friends on the Internet</a>
+          <a
+            href="https://writeofpassage.school/2022/08/26/how-to-make-friends-on-the-internet/"
+            target="_blank"
+          >
+            How to Make Friends on the Internet
+          </a>
         </p>
       </>
     </>

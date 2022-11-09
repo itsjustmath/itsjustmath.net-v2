@@ -83,6 +83,7 @@ export default function PortfolioLayout({ children }) {
           return (
             <PortfolioPanel
               classNames={"panel--portfolio"}
+              href={item.href}
               alignment={item.alignment}
               title={item.title}
               img={item.img}
