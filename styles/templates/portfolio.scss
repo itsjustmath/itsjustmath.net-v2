@@ -1,3 +1,5 @@
+$mobile-breakpoint-max: 991px;
+$desktop-breakpoint-min: $mobile-breakpoint-max + 1;
 .portfolio-layout {
   // height: 100%;
   transition: background-color 1s ease;
@@ -53,6 +55,10 @@ $scroll-line-height: 70px;
   overflow: hidden;
   // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
+  @media (max-width: $mobile-breakpoint-max) {
+    margin: 0 20px;
+  }
+
   h1,
   h2,
   h3,
@@ -64,7 +70,7 @@ $scroll-line-height: 70px;
   &.left {
     .media {
       .image {
-        @media (min-width: 768px) {
+        @media (min-width: $desktop-breakpoint-min) {
           right: unset;
         }
 
@@ -78,14 +84,14 @@ $scroll-line-height: 70px;
 
   &.right {
     .inner {
-      @media (min-width: 768px) {
+      @media (min-width: $desktop-breakpoint-min) {
         flex-direction: row-reverse;
       }
     }
 
     .media {
       .image {
-        @media (min-width: 768px) {
+        @media (min-width: $desktop-breakpoint-min) {
           left: unset;
         }
 
@@ -103,7 +109,7 @@ $scroll-line-height: 70px;
     align-items: center;
     justify-content: space-around;
 
-    @media (min-width: 768px) {
+    @media (min-width: $desktop-breakpoint-min) {
       display: flex;
       flex-direction: row;
     }
@@ -111,7 +117,7 @@ $scroll-line-height: 70px;
 
   .copy,
   .media {
-    @media (min-width: 768px) {
+    @media (min-width: $desktop-breakpoint-min) {
       flex-basis: 40%;
       max-width: 40%;
     }
@@ -125,27 +131,39 @@ $scroll-line-height: 70px;
 
       &:after {
         content: '';
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: bottom left;
-        transition: all 0.3;
-      }
 
-      &:hover {
-        &::after {
+        @media (min-width: $desktop-breakpoint-min) {
+          opacity: 0;
+          transform: scale(0);
+          transform-origin: bottom left;
+          transition: all 0.3;
+        }
+
+        // Always show arrow on mobile
+        @media (max-width: $mobile-breakpoint-max) {
           content: '⇗';
           position: absolute;
           right: -25px;
           top: 0;
-          opacity: 1;
-          transform: scale(1);
-          transition: all 0.3s;
         }
       }
 
+      @media (min-width: $desktop-breakpoint-min) {
+        &:hover {
+          &::after {
+            content: '⇗';
+            position: absolute;
+            right: -25px;
+            top: 0;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s;
+          }
+        }
+      }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: $desktop-breakpoint-min) {
       margin-bottom: unset;
     }
   }
@@ -162,7 +180,7 @@ $scroll-line-height: 70px;
       padding-bottom: 56.25%;
       pointer-events: none;
 
-      @media (min-width: 768px) {
+      @media (min-width: $desktop-breakpoint-min) {
         min-height: 300px;
         height: 50vh;
         padding-bottom: unset;
@@ -199,7 +217,7 @@ $scroll-line-height: 70px;
       width: 100%;
       position: relative;
 
-      @media (min-width: 768px) {
+      @media (min-width: $desktop-breakpoint-min) {
         width: 48vw;
       }
     }
