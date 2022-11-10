@@ -20,7 +20,6 @@ export default function PortfolioPanel({
       key={index}
     >
       {!!title && (
-        // {!!title && !!img && (
         <div className="inner">
           <div className="copy">
             <h2 className="font-black">

@@ -1,10 +1,9 @@
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { portfolioData } from "../../data/portfolioData";
 import Header from "../Header";
 import Footer from "../Footer";
 import PortfolioPanel from "../portfolio/PortfolioPanel";
-// import Portfolio from "../templates/Portfolio";
 
 export default function PortfolioLayout({ children }) {
   const [portfolioLayoutClassName, setPortfolioLayoutClassName] = useState("");
@@ -72,7 +71,6 @@ export default function PortfolioLayout({ children }) {
           <article className="group">{children}</article>
           <Footer />
         </div>
-        {/* <div className="scroll-cta sans-serif">Scroll</div> */}
         <div className="scroll-cta sans-serif">Portfolio</div>
       </PortfolioPanel>
 
