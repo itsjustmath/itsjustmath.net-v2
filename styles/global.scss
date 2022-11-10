@@ -1,5 +1,13 @@
-@import 'lib/tufte/tufte.scss';
+#__next {
+  height: 100%; // REVIEW: Only have this happen on index page?
+}
+
+@import 'lib/google-fonts';
+@import 'lib/tufte/tufte';
 
 @import 'custom';
 @import 'header';
 
+@import 'templates/portfolio'; // QUESTION: how to include this on just the portfolio page layout? (eventually move to CSS in JS)
+
+@import 'utilities';
