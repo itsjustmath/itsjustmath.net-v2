@@ -13,7 +13,7 @@ export const portfolioData = [
     img: "/images/portfolio/fiji-water.jpg",
     panelColor: "teal",
     children: null,
-    href: "#",
+    href: "https://www.fijiwater.com/",
   },
   {
     title: "Every Man Jack",
@@ -21,7 +21,7 @@ export const portfolioData = [
     img: "/images/portfolio/emj.png",
     panelColor: "tan",
     children: null,
-    href: "#",
+    href: "https://www.everymanjack.com/",
   },
   {
     title: "HumanN",
@@ -29,7 +29,7 @@ export const portfolioData = [
     img: "/images/portfolio/humann.jpg",
     panelColor: "red",
     children: null,
-    href: "#",
+    href: "https://humann.com/",
   },
   {
     title: "Sun Bum",
@@ -37,7 +37,7 @@ export const portfolioData = [
     img: "/images/portfolio/sunbum.jpg",
     panelColor: "yellow",
     children: null,
-    href: "#",
+    href: "https://www.sunbum.com/",
   },
   {
     title: "NHS",
@@ -45,7 +45,7 @@ export const portfolioData = [
     img: "/images/portfolio/nhs-fun-factory.png",
     panelColor: "gray",
     children: null,
-    href: "#",
+    href: "https://nhsskatedirect.com/",
   },
   {
     title: "Safe + Fair",
@@ -53,7 +53,7 @@ export const portfolioData = [
     img: "/images/portfolio/safe-and-fair.png",
     panelColor: "orange",
     children: null,
-    href: "#",
+    href: "https://www.safeandfair.com/",
   },
   {
     title: "Outerknown",
@@ -61,7 +61,7 @@ export const portfolioData = [
     img: "/images/portfolio/outerknown.jpg",
     panelColor: "aqua",
     children: null,
-    href: "#",
+    href: "https://www.outerknown.com/",
   },
   {
     title: "San Antonio Museum of Art",
@@ -69,7 +69,7 @@ export const portfolioData = [
     img: "/images/portfolio/san-antonio-museum-of-art.jpg",
     panelColor: "navy",
     children: null,
-    href: "#",
+    href: "https://www.samuseum.org/",
   },
   {
     title: "Radpad",
@@ -77,6 +77,6 @@ export const portfolioData = [
     img: "/images/portfolio/radpad.jpg",
     panelColor: "yellow",
     children: null,
-    href: "#",
+    href: "https://en.wikipedia.org/wiki/RadPad",
   },
 ];
