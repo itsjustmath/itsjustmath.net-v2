@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const imageLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
-
 export default function PortfolioPanel({
   alignment,
   title,
@@ -37,13 +33,7 @@ export default function PortfolioPanel({
             <a className="media" target="_blank">
               <div className="image">
                 <picture>
-                  <Image
-                    loader={imageLoader}
-                    src={img}
-                    alt={title}
-                    width={3840}
-                    height={2160}
-                  />
+                  <Image src={img} alt={title} layout="fill" />
                 </picture>
               </div>
             </a>

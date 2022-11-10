@@ -12,10 +12,8 @@ export default function PortfolioLayout({ children }) {
   const portfolioLayoutRoot = useRef(null);
 
   const initObserver = () => {
-    // const scrollRoot = portfolioLayoutRoot;
     const scrollRoot = document.documentElement;
     let prevScrollTop = 0;
-    // setPortfolioLayoutClassName("white");
 
     // Disconnect observer if it exists
     observer && observer.disconnect();
@@ -42,7 +40,7 @@ export default function PortfolioLayout({ children }) {
 
     observer = new IntersectionObserver(onIntersect, {
       threshold: 0,
-      rootMargin: "-1% 0px -75% 0px",
+      rootMargin: "-10% 0px -75% 0px",
     });
 
     const panelNodes = document.querySelectorAll("[panelcolor]");
