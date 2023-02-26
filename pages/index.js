@@ -30,7 +30,7 @@ export default function IndexPage({ sortedEssays: essays }) {
           reading, sipping coffee, or laughing at my own terrible puns.
         </p>
         <p>
-          I lead builds at a consulting agency of called{" "}
+          I build sites for a consulting agency called{" "}
           <em>
             <a
               href="https://www.accenture.com/ch-en/about/accenture-song-index"
