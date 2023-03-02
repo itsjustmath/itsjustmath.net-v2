@@ -14,6 +14,7 @@ export default function Header(props) {
       <nav className="group">
         <Link href="/">Start Here</Link>
         <Link href="/essays">Essays</Link>
+        <Link href="/notes">Notes</Link>
         <Link href="/newsletter">Newsletter</Link>
       </nav>
     </header>
