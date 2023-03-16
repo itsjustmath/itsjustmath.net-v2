@@ -9,13 +9,18 @@ import path from 'path'
 import { config } from "../config";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
-import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
+import {
+  essayFilePaths,
+  noteFilePaths,
+  ESSAYS_PATH,
+  NOTES_PATH,
+} from "../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
-const components = {
+export const components = {
   // a: CustomLink,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
@@ -28,7 +33,9 @@ const components = {
   SideNote: dynamic(() => import("../components/SideNote")),
 };
 
-export default function PostPage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter, slug }) {
+  // console.log("source", source);
+
   return (
     <>
       <Head>
@@ -58,9 +65,28 @@ PostPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(ESSAYS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+  const essays = fs.readdirSync(ESSAYS_PATH);
+  const notes = fs.readdirSync(NOTES_PATH);
 
+  let type;
+  if (("essays", essays.find((file) => file.includes(params.slug)))) {
+    type = "essay";
+  } else if (notes.find((file) => file.includes(params.slug))) {
+    type = "note";
+  }
+
+  // switch case statement to determine which file to load
+  let filePath;
+  switch (type) {
+    case "essay":
+      filePath = path.join(ESSAYS_PATH, `${params.slug}.mdx`);
+      break;
+    case "note":
+      filePath = path.join(NOTES_PATH, `${params.slug}.mdx`);
+      break;
+  }
+
+  const source = fs.readFileSync(filePath);
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
@@ -68,6 +94,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
+      development: false,
     },
     scope: data,
   });
@@ -76,16 +103,22 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: params.slug,
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const paths = essayFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ""))
-    // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }));
+  // Get slugs for all file paths passed in
+  const getSlugParams = (filePaths) =>
+    filePaths
+      // Remove the .mdx extension
+      .map((path) => path.replace(/\.mdx?$/, ""))
+      .map((slug) => ({ params: { slug } }));
+  const essayPaths = getSlugParams(essayFilePaths);
+  const notepaths = getSlugParams(noteFilePaths);
+
+  const paths = notepaths.concat(essayPaths);
 
   return {
     paths,

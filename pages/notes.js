@@ -5,7 +5,7 @@ import path from "path";
 import Head from "next/head";
 import Link from "next/link";
 import { config } from "../config";
-import { notesFilePaths, NOTES_PATH } from "../utils/mdxUtils";
+import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
 
@@ -61,7 +61,7 @@ NotesPage.getLayout = function getLayout(page) {
 };
 
 export function getStaticProps() {
-  const notes = notesFilePaths.map((filePath) => {
+  const notes = noteFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");

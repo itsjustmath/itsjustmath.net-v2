@@ -8,6 +8,7 @@ import Layout from "../components/Layout";
 import PortfolioLayout from "../components/layouts/PortfolioLayout";
 import MarginFigure from "../components/MarginFigure";
 import SideNote from "../components/SideNote";
+import Link from "next/link";
 export default function IndexPage({ sortedEssays: essays }) {
   return (
     <>
@@ -15,15 +16,13 @@ export default function IndexPage({ sortedEssays: essays }) {
         <title key="title">Start Here | {config.title}</title>
       </Head>
       <>
+        <h1>Hi, I’m Justin!</h1>
         <MarginFigure
           id="Justin Mather"
           image="/images/tie-dye-justin.jpg"
           height={300}
           width={300}
         />
-        {/* TODO: pass this in as MDX? */}
-        {/* Intro Blurb */}
-        <h1>Hi, I’m Justin!</h1>
         <p>
           I’m a New York-born and Los Angeles-raised front-end developer / UI
           engineer. When I’m not working, you can find me hiking, biking,
@@ -40,8 +39,7 @@ export default function IndexPage({ sortedEssays: essays }) {
               Accenture Song
             </a>
           </em>
-          . Prior to that I worked on the apartment rental platform,{" "}
-          <a href="https://en.wikipedia.org/wiki/RadPad">Radpad</a>.
+          . Prior to that I worked on the apartment rental platform, Radpad.
           <SideNote id="portfolio">
             Keep scrolling to preview some of the sites I’ve help build
           </SideNote>{" "}
@@ -54,7 +52,12 @@ export default function IndexPage({ sortedEssays: essays }) {
           to us).
         </p>
 
-        <h3>Read My Latest Essay:</h3>
+        <h3>Read My Latest Essays:</h3>
+        <p>
+          <Link href="/cultivating-collective-creativity">
+            Cultivating Collective Creativity
+          </Link>
+        </p>
         <p>
           <a
             href="https://writeofpassage.school/2022/08/26/how-to-make-friends-on-the-internet/"
