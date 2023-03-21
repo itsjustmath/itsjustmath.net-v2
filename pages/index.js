@@ -10,10 +10,12 @@ import MarginFigure from "../components/MarginFigure";
 import SideNote from "../components/SideNote";
 import Link from "next/link";
 export default function IndexPage({ sortedEssays: essays }) {
+  const pageTitle = `Start Here | ${config.title}`;
+
   return (
     <>
       <Head>
-        <title key="title">Start Here | {config.title}</title>
+        <title key="title">{pageTitle}</title>
       </Head>
       <>
         <h1>Hi, I’m Justin!</h1>

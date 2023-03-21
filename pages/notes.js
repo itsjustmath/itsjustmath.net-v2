@@ -12,12 +12,11 @@ import DefaultLayout from "../components/layouts/DefaultLayout";
 const pageName = "Notes";
 
 export default function NotesPage({ sortedNotes }) {
+  const pageTitle = `${pageName} | ${config.title}`;
   return (
     <Fragment>
       <Head>
-        <title>
-          {pageName} | {config.title}
-        </title>
+        <title>{pageTitle}</title>
       </Head>
       <h1>{pageName}</h1>
 

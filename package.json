@@ -9,10 +9,12 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "next": "latest",
-    "next-mdx-remote": "^3.0.8",
-    "next-remote-watch": "1.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next-mdx-remote": "^4.4.1",
+    "next-remote-watch": "2.0.0",
+    "next-seo": "^4.28.1",
+    "nextjs-google-analytics": "^2.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.49.7"
   }
 }
