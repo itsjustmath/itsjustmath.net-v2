@@ -7,7 +7,7 @@ import PortfolioPanel from "../portfolio/PortfolioPanel";
 
 export default function PortfolioLayout({ children }) {
   const [portfolioLayoutClassName, setPortfolioLayoutClassName] = useState("");
-  const { current: observer } = useRef(null);
+  let { current: observer } = useRef(null);
   const portfolioLayoutRoot = useRef(null);
 
   const initObserver = () => {

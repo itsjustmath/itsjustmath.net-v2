@@ -17,13 +17,15 @@ export default function IndexPage({ sortedEssays: essays }) {
       <Head>
         <title key="title">{pageTitle}</title>
       </Head>
-      <>
+      <div className="homepage">
         <h1>Hi, I’m Justin!</h1>
         <MarginFigure
           id="Justin Mather"
           image="/images/tie-dye-justin.jpg"
           height={300}
           width={300}
+          className="hp-image"
+          priority={true}
         />
         <p>
           I’m a New York-born and Los Angeles-raised front-end developer / UI
@@ -68,7 +70,7 @@ export default function IndexPage({ sortedEssays: essays }) {
             How to Make Friends on the Internet
           </a>
         </p>
-      </>
+      </div>
     </>
   );
 }

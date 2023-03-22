@@ -22,7 +22,16 @@ import { handleize } from "../utils";
  * </MarginFigure>
  */
 
-export default function MarginFigure({ id, image, height, width, noWrapper, children }) {
+export default function MarginFigure({
+  id,
+  image,
+  height,
+  width,
+  noWrapper,
+  priority,
+  className,
+  children,
+}) {
   const mfMarkup = (
     <>
       <label htmlFor={handleize(id)} className="margin-toggle">
@@ -31,11 +40,12 @@ export default function MarginFigure({ id, image, height, width, noWrapper, chil
       <input type="checkbox" id={handleize(id)} className="margin-toggle" />
       <span className="marginnote">
         <Image
-          className="fullwidth"
+          className={`fullwidth ${className}`}
           src={image}
           alt={id}
           height={height}
           width={width}
+          priority={priority}
         />
         <br />
         {children}

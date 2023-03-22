@@ -23,19 +23,17 @@ export default function PortfolioPanel({
         <div className="inner">
           <div className="copy">
             <h2 className="font-black">
-              <Link href={href}>
-                <a target="_blank">{title}</a>
+              <Link href={href} target="_blank">
+                {title}
               </Link>
             </h2>
           </div>
-          <Link href={href} target="_blank">
-            <a className="media" target="_blank">
-              <div className="image">
-                <picture>
-                  <Image src={img} alt={title} layout="fill" />
-                </picture>
-              </div>
-            </a>
+          <Link href={href} target="_blank" className="media">
+            <div className="image">
+              <picture>
+                <Image src={img} alt={title} layout="fill" />
+              </picture>
+            </div>
           </Link>
         </div>
       )}

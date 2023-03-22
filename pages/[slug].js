@@ -34,14 +34,13 @@ export const components = {
 };
 
 export default function PostPage({ source, frontMatter, slug }) {
-  // console.log("source", source);
+
+  const pageTitle = `${frontMatter.title} | ${config.title}`;
 
   return (
     <>
       <Head>
-        <title>
-          {frontMatter.title} | {config.title}
-        </title>
+        <title>{pageTitle}</title>
       </Head>
       <>
         <h1>{frontMatter.title}</h1>
