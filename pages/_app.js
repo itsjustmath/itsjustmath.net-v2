@@ -1,4 +1,5 @@
-import '../styles/global.scss'
+import { GoogleAnalytics } from "nextjs-google-analytics";
+import "../styles/global.scss";
 
 export default function App({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
@@ -6,5 +7,10 @@ export default function App({ Component, pageProps }) {
 
   // REVIEW: what does the fallback layout look like?
 
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <>
+      <GoogleAnalytics trackPageViews />
+      <Component {...pageProps} />
+    </>
+  );
 }
