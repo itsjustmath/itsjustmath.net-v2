@@ -25,3 +25,9 @@ figcaption > span > p {
   vertical-align: baseline;
 }
 
+
+.margin-toggle:checked + .marginnote.hp-image {
+  @media (max-width: 760px) {
+    float: none;
+  }
+}

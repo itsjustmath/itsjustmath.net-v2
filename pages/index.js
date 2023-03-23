@@ -22,6 +22,7 @@ export default function IndexPage({ sortedEssays: essays }) {
           image="/images/tie-dye-justin.jpg"
           height={300}
           width={300}
+          className="hp-image"
         />
         <p>
           I’m a New York-born and Los Angeles-raised front-end developer / UI
