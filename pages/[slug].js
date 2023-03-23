@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
+import { NextSeo } from "next-seo";
 import { config } from "../config";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
@@ -33,16 +34,12 @@ export const components = {
   SideNote: dynamic(() => import("../components/SideNote")),
 };
 
-export default function PostPage({ source, frontMatter, slug }) {
-  // console.log("source", source);
+export default function PostPage({ source, frontMatter }) {
+  const pageTitle = `${frontMatter.title} | ${config.title}`;
 
   return (
     <>
-      <Head>
-        <title>
-          {frontMatter.title} | {config.title}
-        </title>
-      </Head>
+      <NextSeo title={pageTitle} description={frontMatter.description} />
       <>
         <h1>{frontMatter.title}</h1>
         {frontMatter.subtitle && (

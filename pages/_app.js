@@ -1,4 +1,6 @@
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import { DefaultSeo } from "next-seo";
+import { config } from "../config";
 import "../styles/global.scss";
 
 export default function App({ Component, pageProps }) {
@@ -9,6 +11,21 @@ export default function App({ Component, pageProps }) {
 
   return getLayout(
     <>
+      <DefaultSeo
+        title={config.title}
+        description={config.description}
+        openGraph={{
+          url: "https://itsjustmath.net/",
+          title: config.title,
+          description: config.description,
+          site_name: "itsjustmath.net", // REVIEW: or call it Justin Mather?
+        }}
+        twitter={{
+          handle: "@itsjustmath",
+          site: "@itsjustmath",
+          cardType: "summary_large_image",
+        }}
+      />
       <GoogleAnalytics trackPageViews />
       <Component {...pageProps} />
     </>
