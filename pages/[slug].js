@@ -39,7 +39,12 @@ export default function PostPage({ source, frontMatter }) {
 
   return (
     <>
-      <NextSeo title={pageTitle} description={frontMatter.description} />
+      <NextSeo
+        title={frontMatter.title ? pageTitle : config.title}
+        description={
+          frontMatter.description ? frontMatter.description : config.description
+        }
+      />
       <>
         <h1>{frontMatter.title}</h1>
         {frontMatter.subtitle && (
