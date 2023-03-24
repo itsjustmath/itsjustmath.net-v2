@@ -19,10 +19,18 @@ export default function App({ Component, pageProps }) {
           title: config.title,
           description: config.description,
           site_name: "itsjustmath.net", // REVIEW: or call it Justin Mather?
+          images: [
+            {
+              url: config.ogImage,
+              width: config.ogImageWidth,
+              height: config.ogImageHeight,
+              alt: config.ogImageAlt,
+              type: config.ogImageType,
+            },
+          ],
         }}
         twitter={{
           handle: "@itsjustmath",
-          site: "@itsjustmath",
           cardType: "summary_large_image",
         }}
       />

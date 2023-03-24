@@ -44,6 +44,29 @@ export default function PostPage({ source, frontMatter }) {
         description={
           frontMatter.description ? frontMatter.description : config.description
         }
+        openGraph={{
+          title: frontMatter.title ? pageTitle : config.title,
+          description: frontMatter.description
+            ? frontMatter.description
+            : config.description,
+          images: [
+            {
+              url: frontMatter.ogImage
+                ? `https://itsjustmath.net/images/${frontMatter.ogImage}`
+                : config.ogImage,
+              width: frontMatter.ogImageWidth
+                ? frontMatter.ogImageWidth
+                : config.ogImageWidth,
+              height: frontMatter.ogImageHeight
+                ? frontMatter.ogImageHeight
+                : config.ogImageHeight,
+              alt: frontMatter.title ? frontMatter.title : config.ogImageAlt,
+              type: frontMatter.ogImageType
+                ? frontMatter.ogImageType
+                : config.ogImageType,
+            },
+          ],
+        }}
       />
       <>
         <h1>{frontMatter.title}</h1>
