@@ -21,11 +21,11 @@ export default function App({ Component, pageProps }) {
           site_name: "itsjustmath.net", // REVIEW: or call it Justin Mather?
           images: [
             {
-              url: "https://itsjustmath.net/images/tie-dye-justin.jpg",
-              width: 1146,
-              height: 1146,
-              alt: "Justin Mather",
-              type: "image/jpeg",
+              url: config.ogImage,
+              width: config.ogImageWidth,
+              height: config.ogImageHeight,
+              alt: config.ogImageAlt,
+              type: config.ogImageType,
             },
           ],
         }}
