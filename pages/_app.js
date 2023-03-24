@@ -19,10 +19,18 @@ export default function App({ Component, pageProps }) {
           title: config.title,
           description: config.description,
           site_name: "itsjustmath.net", // REVIEW: or call it Justin Mather?
+          images: [
+            {
+              url: "https://itsjustmath.net/images/tie-dye-justin.jpg",
+              width: 1146,
+              height: 1146,
+              alt: "Justin Mather",
+              type: "image/jpeg",
+            },
+          ],
         }}
         twitter={{
           handle: "@itsjustmath",
-          site: "@itsjustmath",
           cardType: "summary_large_image",
         }}
       />

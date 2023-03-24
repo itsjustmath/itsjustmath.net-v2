@@ -44,6 +44,12 @@ export default function PostPage({ source, frontMatter }) {
         description={
           frontMatter.description ? frontMatter.description : config.description
         }
+        openGraph={{
+          title: frontMatter.title ? pageTitle : config.title,
+          description: frontMatter.description
+            ? frontMatter.description
+            : config.description,
+        }}
       />
       <>
         <h1>{frontMatter.title}</h1>
