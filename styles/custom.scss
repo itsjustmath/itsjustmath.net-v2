@@ -1,6 +1,6 @@
-// ===================
+// -----------------------------------------------------------------------------
 // Tufte-CSS overrides
-// ===================
+// -----------------------------------------------------------------------------
 
 .marginnote > p,
 // MainColumn caption font size fix
@@ -25,6 +25,45 @@ figcaption > span > p {
   vertical-align: baseline;
 }
 
+
+article.group {
+  h1, h2 {
+    margin-right: 3rem; // TEMP: don't commit yet
+    line-height: unset;
+  }
+
+  blockquote {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      height: 100%;
+      width: 2px;
+      background-color: rgba(#111111, 0.1);
+    }
+  }
+
+  blockquote p {
+    // font-style: italic;
+    font-size: 1.25rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
+
+  figure {
+    img {
+      border: 1px solid rgba(#111111, 0.03) !important;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Custom Styles
+// -----------------------------------------------------------------------------
 
 .margin-toggle:checked + .marginnote.hp-image {
   @media (max-width: 760px) {
