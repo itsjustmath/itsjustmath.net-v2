@@ -1,9 +1,18 @@
 export default function Footer(props) {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="credits">
         <span>
-          &copy; 2022 <a href="/">Justin Mather</a>
+          &copy; {year}{" "}
+          <a
+            href="https://github.com/itsjustmath/itsjustmath.net-v2"
+            target="_blank"
+            title="View the source code for this site on GitHub"
+          >
+            Justin Mather
+          </a>
         </span>
 
         <form
