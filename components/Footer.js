@@ -9,6 +9,7 @@ export default function Footer(props) {
           <a
             href="https://github.com/itsjustmath/itsjustmath.net-v2"
             target="_blank"
+            title="View the source code for this site on GitHub"
           >
             Justin Mather
           </a>
