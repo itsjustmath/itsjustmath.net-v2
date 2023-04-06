@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import Head from "next/head";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
+import generateRSSFeed from "../utils/generateRSSFeed";
 import { config } from "../config";
 import Layout from "../components/Layout";
 import PortfolioLayout from "../components/layouts/PortfolioLayout";
@@ -14,6 +15,12 @@ export default function IndexPage({ sortedEssays: essays }) {
     <>
       <Head>
         <title key="title">Start Here | {config.title}</title>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href="/rss.xml"
+          title="Main RSS Feed"
+        />
       </Head>
       <>
         <h1>Hi, I’m Justin!</h1>
@@ -97,6 +104,8 @@ export function getStaticProps() {
   const sortedEssays = essays.sort((a, b) => {
     return Date.parse(b.data.publishDate) - Date.parse(a.data.publishDate);
   });
+
+  generateRSSFeed(sortedEssays);
 
   return { props: { sortedEssays } };
 }
