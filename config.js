@@ -3,6 +3,9 @@ export const config = {
   description:
     "Observations and advice on navigating the ever-changing digital landscape.",
   author: "Justin Mather",
+  handle: "itsjustmath",
+  baseUrl: "https://itsjustmath.net",
+  email: "hello@itsjustmath.net",
   ogImage: "https://itsjustmath.net/images/tie-dye-justin.jpg",
   ogImageAlt: "Justin Mather",
   ogImageWidth: 1146,
