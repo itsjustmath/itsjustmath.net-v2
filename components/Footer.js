@@ -19,26 +19,31 @@ export default function Footer(props) {
           action="https://buttondown.email/api/emails/embed-subscribe/itsjustmath"
           method="post"
           target="popupwindow"
-          // onSubmit={windowObj.open(
-          //   "https://buttondown.email/itsjustmath",
-          //   "popupwindow"
-          // )}
-          className="embeddable-buttondown-form"
-          style={{
-            display: "inline-block",
-            marginLeft: "10px",
+          onSubmit={() => {
+            window.open("https://buttondown.email/itsjustmath", "popupwindow");
           }}
+          className="embeddable-buttondown-form"
         >
-          <label htmlFor="bd-email">
+          {/* <label htmlFor="bd-email">
             <strong>Newsletter Sign-up: </strong>
-          </label>
-          <input type="email" name="email" id="bd-email" placeholder="Email" />
-          <input type="hidden" value="1" name="embed" />
-          <input
-            type="submit"
-            value="Subscribe"
-            style={{ marginLeft: "3px" }}
-          />
+          </label> */}
+          <div className="flex">
+            <input
+              type="email"
+              name="email"
+              id="bd-email"
+              placeholder="Sign up for my newsletter"
+              className="form-input sm"
+              style={{ minWidth: 170 }}
+            />
+            <input type="hidden" value="1" name="embed" />
+            <input
+              type="submit"
+              value="Subscribe"
+              className="btn sm"
+              style={{ marginLeft: "3px" }}
+            />
+          </div>
         </form>
       </div>
     </footer>

@@ -1,34 +1,47 @@
+import Head from "next/head";
 import Layout from "../components/Layout";
 import DefaultLayout from "../components/layouts/DefaultLayout";
+import { config } from "../config";
 
 const pageName = "Newsletter";
 
 export default function NewsletterPage() {
   return (
     <>
-      <p className="margin-marker">
-        <iframe
-          scrolling="no"
-          style={{
-            width: "100%",
-            height: 220,
-            border: "1px #ccc solid",
-            paddingTop: "20px",
+      <Head>
+        <title key="title">
+          {pageName} | {config.title}
+        </title>
+      </Head>
+      {/* TODO: hide on 'newsletter' page */}
+      <div className="wrapper">
+        <form
+          action="https://buttondown.email/api/emails/embed-subscribe/itsjustmath"
+          method="post"
+          target="popupwindow"
+          onSubmit={() => {
+            window.open("https://buttondown.email/itsjustmath", "popupwindow");
           }}
-          // style={""}
-          src="https://buttondown.email/itsjustmath?as_embed=true"
-        ></iframe>
-        <br />
-        <br />
-
-        <a
-          href="https://buttondown.email/itsjustmath/archive"
-          target="_blank"
-          title="Newsletter Archive"
+          className="newsletter-form"
         >
-          Newsletter Archive
-        </a>
-      </p>
+          <h2 style={{ marginBottom: 15 }}>Subscribe to My Newsletter</h2>
+
+          <div>
+            <input
+              required
+              type="email"
+              name="email"
+              id="bd-email"
+              placeholder="Your email"
+              className="form-input w-100 sans-serif"
+              style={{ marginBottom: 7 }}
+            />
+            <div>
+              <input type="submit" className="btn" value="Subscribe" />
+            </div>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

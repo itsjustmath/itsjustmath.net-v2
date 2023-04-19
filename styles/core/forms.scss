@@ -1,0 +1,30 @@
+.form-input {
+  border-radius: 2px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in,
+    background-color 100ms ease-in;
+  border: 2px solid $form-bg;
+  color: $text-color;
+  background: $form-bg;
+  display: block;
+  height: 30px;
+  font-family: 'Libre Franklin', sans-serif;
+
+  &:hover {
+    border-color: #CCCCC6;
+  }
+  &:focus,
+  &:active {
+    border-color: $form-active-color;
+    outline: 0;
+    // background: #fff;
+  }
+
+  &.sm {
+    font-size: $font-size-sm;
+    border-width: 1px;
+    padding: 2px 5px;
+    height: 24px; // to match button height
+  }
+}

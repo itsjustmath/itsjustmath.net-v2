@@ -1,0 +1,15 @@
+footer {
+  .credits {
+    .embeddable-buttondown-form {
+      display: inline-block;
+
+      @media screen and (max-width: $mobile-breakpoint-max) {
+        margin-top: 5px;
+      }
+
+      @media screen and (min-width: $desktop-breakpoint-min) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
