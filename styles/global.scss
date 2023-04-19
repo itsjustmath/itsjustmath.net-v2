@@ -1,13 +1,28 @@
+// TODO: rename to `styles`?
 #__next {
   height: 100%; // REVIEW: Only have this happen on index page?
 }
 
+// Libs
 @import 'lib/google-fonts';
 @import 'lib/tufte/tufte';
 
+// Lib Overrides
 @import 'custom';
+
+// Core
+@import 'variables';
+@import 'core/forms';
+@import 'core/buttons';
+
+// Components
 @import 'header';
+@import 'components/footer';
 
-@import 'templates/portfolio'; // QUESTION: how to include this on just the portfolio page layout? (eventually move to CSS in JS)
+// Templates
+// QUESTION: how to include this on just their respective page/layout? (eventually move to CSS in JS)
+@import 'templates/portfolio';
+@import 'templates/newsletter';
 
+// Utils
 @import 'utilities';

@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in,
+    background-color 100ms ease-in;
+  border: 2px solid $btn-bg;
+  color: $text-color;
+  background-color: $btn-bg;
+  display: block;
+  height: 40px;
+  font-family: 'Libre Franklin', sans-serif;
+
+  &:hover {
+    border-color: #CCCCC6;
+  }
+  &:focus,
+  &:active {
+    border-color: $form-active-color;
+    outline: 0;
+  }
+
+  &.sm {
+    font-size: $font-size-sm;
+    padding: 2px 5px;
+    height: 30px;
+    border-width: 1px;
+  }
+}
