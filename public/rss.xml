@@ -4,7 +4,7 @@
         <title>Justin Mather</title>
         <link>https://itsjustmath.net</link>
         <description>Observations and advice on navigating the ever-changing digital landscape.</description>
-        <lastBuildDate>Mon, 10 Apr 2023 16:25:40 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Jun 2023 15:38:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -102,7 +102,7 @@ As the novelist Henry Miller once said, "part of the act of creating is in disco
             <content:encoded><![CDATA[
 <MainColumn image='/images/internet-friends-illustration.png' height={1117} width ={1490} caption="Illustration of finding your people online" />
 
-I worked with fellow prose-wrangler, Michael Dean (recently anointed Editor-in-Chef at Write of Passage) to develop a piece to be featured on the Write of Passage site.
+_Background: I worked with fellow prose-wrangler, Michael Dean (recently anointed Editor-in-Chef at Write of Passage) to develop this piece to be featured on the Write of Passage site._
 
 Elaborating on my [previous essay](https://itsjustmath.net/internet-friends) about how I counterintuitively made more friends during the pandemic, this new piece attempts to convince you that—in this age of increasing isolation and hyper-individualism—the internet is the ultimate resource for finding that social connection you may be longing for.
 

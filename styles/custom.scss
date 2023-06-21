@@ -65,7 +65,9 @@ article.group {
 // Custom Styles
 // -----------------------------------------------------------------------------
 
-.margin-toggle:checked + .marginnote.hp-image {
+.margin-toggle:checked + .marginnote.hp-image,
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
   @media (max-width: 760px) {
     float: none;
   }
