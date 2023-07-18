@@ -1,5 +1,5 @@
 export const config = {
-  title: "itsjustmath.net",
+  title: "Justin Mather",
   description:
     "Observations and advice on navigating the ever-changing digital landscape.",
   author: "Justin Mather",
