@@ -72,3 +72,9 @@ article.group {
     float: none;
   }
 }
+
+h1 {
+  @media (max-width: 760px) {
+    font-size: 2.7rem;
+  }
+}
