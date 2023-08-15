@@ -15,6 +15,7 @@ export default function IndexPage({ sortedEssays: essays }) {
     <>
       <Head>
         <title key="title">Start Here | {config.title}</title>
+        {/* REVIEW: add RSS to every page? */}
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -37,20 +38,17 @@ export default function IndexPage({ sortedEssays: essays }) {
           reading, sipping coffee, or laughing at my own terrible puns.
         </p>
         <p>
-          I build sites for a consulting agency called{" "}
+          I lead site builds at{" "}
           <em>
             <a
-              href="https://www.accenture.com/ch-en/about/accenture-song-index"
-              title="Accenture Song"
+              href="https://www.accenture.com/us-en"
+              title="Accenture"
               target="_blank"
             >
-              Accenture Song
+              Accenture
             </a>
           </em>
           . Prior to that I worked on the apartment rental platform, Radpad.
-          <SideNote id="portfolio">
-            Keep scrolling to preview some of the sites I’ve help build
-          </SideNote>{" "}
         </p>
         <p>
           I’m interested in exploring how to use technology to improve people's
