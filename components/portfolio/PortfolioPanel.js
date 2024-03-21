@@ -32,7 +32,7 @@ export default function PortfolioPanel({
             <a className="media" target="_blank">
               <div className="image">
                 <picture>
-                  <Image src={img} alt={title} layout="fill" />
+                  <Image src={img} alt={title} layout="fill" priority={true} />
                 </picture>
               </div>
             </a>
