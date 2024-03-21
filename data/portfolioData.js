@@ -1,5 +1,21 @@
 export const portfolioData = [
   {
+    title: "Skims",
+    alignment: "left",
+    img: "/images/portfolio/skims.png",
+    panelColor: "skims",
+    href: "https://skims.com/",
+    children: null,
+  },
+  {
+    title: "Spanx",
+    alignment: "right",
+    img: "/images/portfolio/spanx.png",
+    panelColor: "spanx",
+    children: null,
+    href: "https://spanx.com/",
+  },
+  {
     title: "Stamps.com",
     alignment: "left",
     img: "/images/portfolio/stamps.png",
